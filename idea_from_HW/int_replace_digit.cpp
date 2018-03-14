@@ -4,5 +4,5 @@
 // O: An int already be replaced
 // Include: NONE
 
-int replace(int x, int y,int n)
+template <typename T> T replace(T x, T y,T n)
 {return (n < 10?(n == x ? y : n) : (n % 10 == x ? y : n % 10) + replace(x, y, n / 10) * 10);}

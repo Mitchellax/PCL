@@ -5,7 +5,7 @@
 // I: An int
 // O: The number of zeros
 // Include: NONE
-int trailing_zeros(int num)
+template <typename T> T trailing_zeros(T num)
 {
 	if(num >= 10)
 		return(!(num % 10) + trailing_zeros(num / 10));
@@ -21,5 +21,5 @@ int trailing_zeros(int num)
 // I: An int
 // O: The number of zeros
 // Include: NONE
-int trailing_zeros(int num)
+template <typename T> T trailing_zeros(T num)
 {return (num >= 10 ? (!(num % 10) + trailing_zeros(num / 10)) : !num);}
