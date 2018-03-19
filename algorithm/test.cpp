@@ -1,16 +1,4 @@
-// Pointer edition (binary & compatible ediition) 
-
-// Name: merge
-// Function: merge the array smaller
-// I: 
-//		a pointer aim to the array which need be sorted
-//		a integer mark begin
-//		a integer mark mid
-//		a integer mark end
-//
-//		need a global constant mark date`s limit like const int INFTY = 2147483647 if date is stored by int
-// O: two series halved
-// Include: NONE
+#include<cstdio>
 
 const int INFTY = 2147483647;
 
@@ -66,6 +54,11 @@ template <typename T> void mergeSort (T * num, int begSub, int endSub)
 	}
 }
 
-
-
-// ------------------------------------------------------------------------------------------
+int main (int argc, char const * argv[])
+{
+	int num[8]={8, 7, 8, 9, 4, 3, 11, 19};
+	mergeSort <int> (num, 0, 7);
+	for (int i = 0;i < 8;++i)
+		printf ("%d  ", num[i]);
+	return 0;
+}
