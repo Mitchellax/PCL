@@ -1,13 +1,18 @@
+//=================================================================
+
 //Global variable edition
 
 // Name: insertion_sort
 // Function: Sort a series by insertion sort
 // I:
-//		a global array T num[]
-//		a integer mark where begin int beg
-//		a integer mark where end int end
-// O: a series are sorted(smaller to biger)
+//		A global array T num[]
+//		A integer mark where begin int beg
+//		A integer mark where end int end
+// O: A series are sorted(smaller to biger)
 // Include: NONE
+
+template <typename T> void insertion_sort(int beg, int end);
+
 template <typename T> void insertion_sort(int beg, int end)
 {
 	for (int i = beg + 1; i < end; i++)
@@ -23,3 +28,6 @@ template <typename T> void insertion_sort(int beg, int end)
 	}
 	return;
 }
+
+
+//===================================================================

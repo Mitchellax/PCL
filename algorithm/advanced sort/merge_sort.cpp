@@ -1,3 +1,5 @@
+//============================================================================
+
 // Pointer edition (binary & compatible ediition) 
 
 // Name: merge
@@ -14,6 +16,21 @@
 
 const int INFTY = 2147483647;
 
+template <typename T> void merge (T * num, int begSub, int midSub, int endSub);
+
+
+// Name: merge_sort
+// Function: Sort a array by merge sort
+// I: 
+//		a pointer aim to the array which need be sorted
+//		a integer mark begin
+//		a integer mark end
+// O: a series are sorted(smaller to biger)
+// Include: NONE
+
+template <typename T> void mergeSort (T * num, int begSub, int endSub);
+
+//------------------------------------------------------------------------------
 
 template <typename T> void merge (T * num, int begSub, int midSub, int endSub)
 {
@@ -46,15 +63,6 @@ template <typename T> void merge (T * num, int begSub, int midSub, int endSub)
 }
 
 
-// Name: merge_sort
-// Function: Sort a array by merge sort
-// I: 
-//		a pointer aim to the array which need be sorted
-//		a integer mark begin
-//		a integer mark end
-// O: a series are sorted(smaller to biger)
-// Include: NONE
-
 template <typename T> void mergeSort (T * num, int begSub, int endSub)
 {
 	if (begSub < endSub)
@@ -68,4 +76,4 @@ template <typename T> void mergeSort (T * num, int begSub, int endSub)
 
 
 
-// ------------------------------------------------------------------------------------------
+//=================================================================================== 
