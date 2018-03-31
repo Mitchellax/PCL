@@ -13,11 +13,14 @@ template <typename T> void swap(T &a, T &b);
 // Name: partition
 // Function: part the inputed array into two part hold the elements in first part are smaller than the second.
 // I: A array need to be parted
-// 		A integer marked where begin
-// 		A integer marked where end
-//		A integer marked where is standard for partition
+// 		A integer marked the subscript of where begin
+// 		A integer marked the subscript of where end
+//		A integer marked the subscript of where is standard for partition
 // O: The edge of two parts (and the array have parted)
 // Include: NONE
+
+// WORNING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// This function must be predeclared or input all the parameters
 
 template <typename T> int partition(T num[], int beg, int end, int jud = -1);
 

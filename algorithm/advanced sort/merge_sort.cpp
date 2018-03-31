@@ -6,12 +6,12 @@
 // Function: merge the array smaller
 // I: 
 //		a pointer aim to the array which need be sorted
-//		a integer mark begin
-//		a integer mark mid
-//		a integer mark end
+//		A integer marked the subscript of where begin
+//		A integer marked the subscript of where is the middle of array
+//		A integer marked the subscript of where end
 //
 //		need a global constant mark date`s limit like const int INFTY = 2147483647 if date is stored by int
-// O: two series halved
+// O: NONE (The original array has been halved into two arrays)
 // Include: NONE
 
 const int INFTY = 2147483647;
@@ -25,7 +25,7 @@ template <typename T> void merge (T * num, int begSub, int midSub, int endSub);
 //		a pointer aim to the array which need be sorted
 //		a integer mark begin
 //		a integer mark end
-// O: a series are sorted(smaller to biger)
+// O: NONE (The original array has been sorted from small to large)
 // Include: NONE
 
 template <typename T> void mergeSort (T * num, int begSub, int endSub);
