@@ -1,64 +1,42 @@
 #include<cstdio>
 
-const int INFTY = 2147483647;
-
-
-template <typename T> void merge (T * num, int begSub, int midSub, int endSub)
+template <typename T> void insertion_sort_withgap(T num[], int beg, int end, int gap)
 {
-	int preLength = midSub - begSub + 1;
-	int bacLength = endSub - midSub;
-	T * L = new int [preLength + 1];
-	T * R = new int [bacLength + 1];
-	int i, j, k;
-	for (i = 0; i < preLength; i++)
-		L[i] = num[begSub + i];
-	for (j = 0; j < bacLength; j++)
-		R[j] = num[midSub + j + 1];
-	L[preLength] = INFTY;
-	R[bacLength] = INFTY;
-	for (i = 0, j = 0, k = begSub; k <= endSub; k++)
+	for (int i = beg + 1; i < end; i += gap)
 	{
-		if (L[i] <= R[j])
+		T key = num[i];
+		int j = i - gap;
+		while(j >= 0 && num[j] > key)
 		{
-			num[k] = L[i];
-			i++;
+			num[j + gap] = num[j];
+			j = j - gap;
 		}
-		else
-		{
-			num[k] = R[j];
-			j++;
-		}
+		num[j + gap] = key;
 	}
-	delete [] L;
-	delete [] R;
+	return;
 }
 
-
-// Name: merge_sort
-// Function: Sort a array by merge sort
-// I: 
-//		a pointer aim to the array which need be sorted
-//		a integer mark begin
-//		a integer mark end
-// O: a series are sorted(smaller to biger)
-// Include: NONE
-
-template <typename T> void mergeSort (T * num, int begSub, int endSub)
+template <typename T> void shell_sort(T num[], int beg, int end)
 {
-	if (begSub < endSub)
+	int length = end - beg + 1, j = 2, k = 4;
+	int G[2] = {1, 4};
+	while (length > (k * 3 + 1))
 	{
-		int midSub = (begSub + endSub) / 2;
-		mergeSort <T> (num, begSub, midSub);
-		mergeSort <T> (num, midSub + 1, endSub);
-		merge <T> (num, begSub, midSub, endSub);
+		int * G = new int [++j];
+		k = k * 3 + 1;
+		G[j--] = k;
 	}
+	for (int i = j - 1; i >= 0; i--)
+		insertion_sort_withgap <T> (num, beg, end, G[i]);
 }
+
 
 int main (int argc, char const * argv[])
 {
-	int num[8]={8, 7, 8, 9, 4, 3, 11, 19};
-	mergeSort <int> (num, 0, 7);
-	for (int i = 0;i < 8;++i)
+	int num[30] = {8, 7, 8, 9, 4, 3, 11, 19, 655, 123, 12, 321, 53, 232, 1, 3, 321, 66, 6, 23, 213, 5, 3, 213, 67, 75, 45, 6, 980, 2222};
+	shell_sort <int> (num, 0, 29);
+	for (int i = 0;i < 30;++i)
 		printf ("%d  ", num[i]);
 	return 0;
 }
+
